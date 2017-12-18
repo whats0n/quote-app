@@ -9,7 +9,7 @@ const styles = theme => ({
 });
 
 const CustomInputLabel = props => {
-	const { classes, ...other } = props;
+	const {classes, ...other} = props;
 	return <InputLabel 
 		{...other}
 		FormControlClasses={{

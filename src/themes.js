@@ -9,19 +9,43 @@ const buildTheme = props => {
 			width: '100%',
 			height: '100vh'
 		},
-		container: {
+		content: {
 			position: 'relative',
 			overflow: 'auto',
-			padding: '20px 20px 20px 320px',
+			// padding: '20px',
 			height: '100%'
 		},
 		sidebar: {
 			position: 'relative',
 			float: 'left',
-			// borderRight: `1px solid ${colors.lightGray}`,
 			boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)',
 			width: '300px',
 			height: '100%'
+		},
+		header: {
+			position: 'absolute',
+			top: 0,
+			left: 0,
+			right: 0,
+			padding: '20px'
+		},
+		outer: {
+			position: 'relative',
+			paddingBottom: '91px',
+			height: '100%'
+		},
+		inner: {
+			overflow: 'auto',
+			padding: '20px',
+			height: '100%'
+		},
+		footer: {
+			position: 'absolute',
+			left: 0,
+			right: 0,
+			bottom: 0,
+			padding: '20px',
+			textAlign: 'right'
 		},
 
 		formControl: {
@@ -38,25 +62,44 @@ const buildTheme = props => {
 			fontWeight: '500'
 		},
 		value: {
-			paddingTop: '10px',
 			color: colors.darkGray,
 			fontSize: '18px',
 			fontWeight: '500'
 		},
+		titleLG: {
+			fontSize: '24px',
+			fontWeight: 500,
+			lineHeight: '1.2'
+		},
 		//controls
-		buttonGreen: {
+		button: {
 			padding: '17px 30px',
-			color: colors.white,
-			background: colors.green,
 			fontSize: '16px',
 			lineHeight: 1,
-			'&:hover': {
+			//green
+			'&[data-color="green"]': {
+				color: colors.white,
+				background: colors.green
+			},
+			'&[data-color="green"]:hover, &[data-color="green"]:focus': {
+				color: colors.white,
 				background: colors.darkGreen
 			},
-			'&:focused': {
-				background: colors.darkGreen
+			//red
+			'&[data-color="red"]': {
+				color: colors.white,
+				background: colors.red
+			},
+			'&[data-color="red"]:hover, &[data-color="red"]:focus': {
+				color: colors.white,
+				background: colors.darkRed
 			}
-		}
+		},
+		
+		checkboxDefault: {
+			color: colors.darkGray
+		},
+
 	};
 
 	for (let key in props) {
@@ -70,9 +113,13 @@ const buildTheme = props => {
 export default {
 	
 	ehopper: buildTheme({
-		container: {
+		content: {
 		},
 		sidebar: {
+		},
+		header: {
+			color: colors.white,
+			background: colors.blue
 		},
 
 		//label
@@ -108,9 +155,33 @@ export default {
 				background: colors.darkBlue
 			}
 		},
+		//button
+		button: {
+			'&[data-color="primary"]': {
+				color: colors.white,
+				background: colors.blue
+			},
+			'&[data-color="primary"]:hover, &[data-color="primary"]:focus': {
+				color: colors.white,
+				background: colors.darkBlue
+			}
+		},
+		checkboxChecked: {
+			color: colors.blue
+		},
+
+		link: {
+			color: colors.blue
+		},
+
+		//content tablebox
+		th: {
+			color: colors.white,
+			background: colors.blue
+		}
 	}),
 	boost: buildTheme({
-		container: {
+		content: {
 		},
 		sidebar: {
 		}

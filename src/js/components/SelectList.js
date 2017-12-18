@@ -13,13 +13,13 @@ const styles = theme => ({
 
 const SelectList = props => {
 
-	const { classes, name, id, options, ...other } = props;
+	const {classes, name, id, options, ...other} = props;
 
 	const items = options.map((item) => {
-		const { id, ...other } = item;
+		const {id, ...other} = item;
 		return <MenuItem 
-			{ ...other }
-			key={ id }
+			{...other}
+			key={id}
 			classes={{
 				root: classes.item,
 				selected: classes.selected
@@ -28,10 +28,10 @@ const SelectList = props => {
 	});
 
 	return <Select
-		{ ...other }
-		className={ classes.root }
-		input={ <Input name={ name } id={ id } /> }
-		children={ items }
+		{...other}
+		className={classes.root}
+		input={<Input name={name} id={id} />}
+		children={items}
 	/>;
 
 };

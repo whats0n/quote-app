@@ -12,9 +12,16 @@ export const colors = {
 	green: '#22B745',
 	darkGreen: '#4cac51',
 
-	red: '#ec4a41',
+	red: '#F44336',
+	darkRed: '#E53935',
 
 	gray: '#6e6e6e',
 	darkGray: '#2e2e2e',
 	lightGray: '#c1c1c1'
+};
+
+export const modal = {
+	servicePlan: 'ServicePlan',
+	planOptions: 'PlanOptions',
+	deleteItem: 'DeleteItem'
 };

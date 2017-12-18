@@ -8,10 +8,10 @@ const styles = theme => ({
 });
 
 const InputField = props => {
-	const { classes, ...other } = props;
+	const {classes, ...other} = props;
 	return <Input 
-		{ ...other }
-		className={ classes.root }
+		{...other}
+		className={props.className || classes.root}
 	/>
 
 };
